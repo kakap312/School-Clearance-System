@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2022 at 08:33 AM
+-- Generation Time: Aug 01, 2022 at 10:38 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -38,6 +38,22 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`username`, `Password`) VALUES
 ('admin', '1234');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clearance`
+--
+
+CREATE TABLE `clearance` (
+  `index number` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `program` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -115,6 +131,20 @@ INSERT INTO `student` (`username`, `password`, `fullname`, `Index Number`) VALUE
 ('bismark', '1234', 'Owusu Bismark', 'fms/005/18'),
 ('deborah', '1234', 'Deborah Attah', 'fms/006/18'),
 ('Francis', '1234', 'Yacham Francis', 'fms/007/18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student-clearance-info`
+--
+
+CREATE TABLE `student-clearance-info` (
+  `index number` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `program` varchar(255) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
