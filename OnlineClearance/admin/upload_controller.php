@@ -1,4 +1,8 @@
-<?php include 'head.php';
+<?php include "head.php" 
+
+?>
+
+</*?php include 'head.php';
 $student_id=$_POST['student_id'];
 $cDateTimestamp=strtotime("now").".jpg";
 $target_dir="../upload/";
@@ -36,4 +40,4 @@ if ($connect->query($sql)===TRUE) {
 	echo "Error: ".$sql. "<br>".$connect->error;
 }
 
- ?>
+ ?*/>

@@ -1,11 +1,4 @@
 <?php include "head.php"?>
-<div>
-	<?php
-	if (isset($_POST['create'])) {
-		echo "Details Submitted";
-	}
-	  ?>
-</div>
 
 <form action="requestclearance.php" method="post">
 	<div class="container">
@@ -21,12 +14,22 @@
 	<label for="name"><b>Name</b></label>
 	<input class="form-control" type="text" name="student name"required>
 
-	<label for="gender"><b>Gender</b></label>
-	<input type="radio" name="gender">Male
-  <input  type="radio" name="gender">female<br>
+	<label for="gender" ><b>Gender</b></label>
+	<input type="radio" name="gender" required>Male
+  <input  type="radio" name="gender" required>female<br>
 
- 	<label for="programme"><b>Programme</b></label>
- 	<input class="form-control" type="text" name="programme"required><br>
+
+ 	<label for="programme" ><b>Programme</b></label><br>
+ 	<select id = "programme" >
+ 		<option value="Computer Science" >Computer Science</option>
+ 		<option value="Mathematics with Economics">Mathematics with Economics</option>
+ 		<option value="Actuarial Science">Actuarial Science</option>
+ 		<option value="Pure Mathematics">Pure Mathematics</option>
+ 		<option value="Applied Biology">Applied Science</option>
+ 		<option value="Applied Chemistry">Applied Chemistry</option>
+  		<option value="Applied Physics">Applied Physics</option>
+
+ 	</select><br>
 
 
 	<label for="date"><b>Date</b></label>

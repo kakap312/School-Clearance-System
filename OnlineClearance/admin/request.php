@@ -1,7 +1,4 @@
 <?php include "head.php";
-if (isset($_GET['indexnumber'])) {
-	// code...
-}
 if (isset($_GET['Accept'])) {
 $Accept=$_GET["Accept"];
 $sql="UPDATE department SET status='Accepted' where id= '$Accept'";
@@ -31,7 +28,8 @@ if (isset($_GET["Reject"])) {
 					
 				</tr>
 			<?php
-			$sql="SELECT * FROM request,department where request.id=department.id";
+			if (isset($_GET['indexnumber'] )) {
+				$sql="SELECT * FROM request,department where request.id=department.id";
 			$result=$connect->query($sql);
 
 			if ($result->num_rows>0) {
@@ -45,6 +43,7 @@ if (isset($_GET["Reject"])) {
 		
 				}
 			}
+		}
 			  ?>
 			  
 
