@@ -17,34 +17,39 @@ if (isset($_GET["Reject"])) {
 	}
 }
  ?>
+
 <div class="container " style="margin-top: 30px;">
 	<div class="row">
 		<div class="col-sm-12">
 			<table class="table table-hover">
 				<tr>
-					<th>Department<th>
+					<th><label for student_id><br>Student ID</label></th>
 					
-					<th>Options</th>
+					<th><label for department><br>Department</label>
+					<select id department>
+						<option value="CampusAccountant" >Campus Accountant</option>
+				 		<option value="CampusLibrarian">Campus Librarian</optio>
+				 		<option value="ComputerLaboratory">Computer Laboratory</option>
+				 		<option value="Laboratory">Laboratory</option>
+				 		<option value="SeniorHallTutor">Senior Hall Tutor</option>
+				 		<option value="CampusSportsCoach">Campus Sports Coach</option>
+				  		<option value="DeaninCharge">Dean in Charge</option>
+						</select></th>
+					<th><label for options><br>Options
+                      	<?php
+                  
+					
+					echo "<a href='request.php?Accept='.[id].' class='btn btn-success'>Accept</a>";
+					echo "<a href='request.php?Reject='.[id].' class='btn btn-danger'>Reject</a>";
+					
+			  ?>
+					</label></th>
+					<th><label for message><br>Message</label>
+					<input class="form control" type="text" name="message" required></th>
+
 					
 				</tr>
-			<?php
-			if (isset($_GET['indexnumber'] )) {
-				$sql="SELECT * FROM request,department where request.id=department.id";
-			$result=$connect->query($sql);
-
-			if ($result->num_rows>0) {
-				while ($row=$result->fetch_assoc()) {
-					echo "<tr><td>".$row["Name"]."</td>";	
-					
-					echo "<td><a href='request.php?Accept=".$row["id"]."' class='btn btn-success'>Accept</a></td>";
-					echo "<td><a href='request.php?Reject=".$row["id"]."' class='btn btn-danger'>Reject</a></td>";
-					echo "<td><a href='upload.php?department=".$row["department_id"]."' class='btn btn-info'>upload</a></td>";
-				
 		
-				}
-			}
-		}
-			  ?>
 			  
 
 			</table>

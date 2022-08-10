@@ -8,7 +8,7 @@
 				<tr>
 					<th>Department</th>
 					<th>Status</th>
-			        <th>Comment</th>
+			        <th>Message</th>
 			        
 				</tr>
 			<?php
