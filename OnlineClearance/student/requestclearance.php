@@ -1,4 +1,28 @@
 <?php include "head.php"?>
+<<<<<<< Updated upstream
+=======
+<div>
+	<?php
+	require_once(dirname(__FILE__).'/../config.php');;
+	if (isset($_POST['create'])) {
+		$indexNumber = $_POST['indexnumber'];
+		$studentName = $_POST['studentname'];
+		$gender =$_POST['gender']; 
+		$programme = $_POST['programme'];
+		$date = $_POST['date'];
+		$sql="Insert into student_clearance_info(index_number,name,gender,programme,date_created)value('$indexNumber','$studentName','$gender','$programme','$date')";
+		$result=$connect->query($sql);
+		if($result === true){
+			echo "<script>alert('Request sent Successfully')</script>";
+		}else{
+			echo "<script>alert('$connect->error')</script>";
+		}
+
+		
+	}
+	  ?>
+</div>
+>>>>>>> Stashed changes
 
 <form action="requestclearance.php" method="post">
 	<div class="container">
@@ -12,7 +36,7 @@
 	<input class="form-control" type="text" name="indexnumber" required>
  
 	<label for="name"><b>Name</b></label>
-	<input class="form-control" type="text" name="student name"required>
+	<input class="form-control" type="text" name="studentname"required>
 
 	<label for="gender" ><b>Gender</b></label>
 	<input type="radio" name="gender" required>Male
