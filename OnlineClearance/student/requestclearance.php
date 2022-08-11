@@ -1,6 +1,5 @@
 <?php include "head.php"?>
-<<<<<<< Updated upstream
-=======
+
 <div>
 	<?php
 	require_once(dirname(__FILE__).'/../config.php');;
@@ -22,7 +21,7 @@
 	}
 	  ?>
 </div>
->>>>>>> Stashed changes
+
 
 <form action="requestclearance.php" method="post">
 	<div class="container">
