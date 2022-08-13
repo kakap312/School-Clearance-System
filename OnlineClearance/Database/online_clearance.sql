@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2022 at 10:38 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Aug 14, 2022 at 12:12 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -89,7 +88,7 @@ INSERT INTO `department` (`id`, `Name`, `status`) VALUES
 CREATE TABLE `request` (
   `id` int(255) NOT NULL,
   `department_id` int(255) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -146,6 +145,33 @@ CREATE TABLE `student-clearance-info` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_clearance_info`
+--
+
+CREATE TABLE `student_clearance_info` (
+  `id` int(11) NOT NULL,
+  `index_number` varchar(255) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `programme` varchar(50) NOT NULL,
+  `date_created` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_clearance_info`
+--
+
+INSERT INTO `student_clearance_info` (`id`, `index_number`, `name`, `gender`, `programme`, `date_created`) VALUES
+(1, 'sjdnfjsf', 'jskdjnfksjdf', 'on', 'nmsnd fsdf', '2022-08-19'),
+(2, 'dfsfwf', 'sdfsdfsd', '', 'sdfsdf', '2022-08-18'),
+(3, 'dfsdfssdf', 'sdfsdfs', 'on', 'sdfsdf', '2022-08-16'),
+(4, 'wemw,em', 'sdsds', '', 'sdsdsd', '2022-08-17'),
+(5, 'sdfsdfsd', 'sdfsfsdfds', '', 'sdfsdf', '2022-08-22'),
+(6, 'sasas', 'asas', 'on', '', '2022-09-01');
+
 --
 -- Indexes for dumped tables
 --
@@ -163,28 +189,20 @@ ALTER TABLE `request`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `student`
+-- Indexes for table `student_clearance_info`
 --
-ALTER TABLE `student`
-  ADD PRIMARY KEY (`Index Number`);
+ALTER TABLE `student_clearance_info`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `department`
+-- AUTO_INCREMENT for table `student_clearance_info`
 --
-ALTER TABLE `department`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `request`
---
-ALTER TABLE `request`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
-
+ALTER TABLE `student_clearance_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
