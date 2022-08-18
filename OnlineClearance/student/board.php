@@ -6,25 +6,24 @@
 		<div class="col-sm-12">
 			<table class="table table-hover">
 				<tr>
-					<th>Department</th>
-					<th>Status</th>
-			        <th>Message</th>
+					<th>Student ID</th>
+					<th>Depertment</th>
+			        <th>Status</th>
+			        <th>Date Cleared</th>
 			        
 				</tr>
 			<?php
-			$sql="SELECT * FROM request,department where request.id=department.id";
-			$result=$connect->query($sql);
+			$sql="SELECT * FROM clearance";
+				$result=$connect->query($sql);
+				if ($result->num_rows > 0) {
+					while ($row=$result->fetch_assoc()) {
+						echo "<tr><td>".$row["student_id"]."</td>";
+						echo  "<td>".$row["department"]."</td>";
+						echo  "<td>".$row["status"]."</td>";
+						echo  "<td>".$row["datecleared"]."</td></tr>";
+					}
+}
 
-			if ($result->num_rows>0) {
-				while ($row=$result->fetch_assoc()) {
-					echo "<tr><td>".$row["Name"]."</td>";	
-					echo "<td>".$row["status"]."</td>";	
-					
-					echo "<td><a href='request.php?Accept=".$row["id"]."' class='btn btn-success'>View Details</a></td>";
-					
-		
-				}
-			}
 			  ?>
 			  
 

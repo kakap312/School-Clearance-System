@@ -43,7 +43,7 @@
 
 
  	<label for="programme" ><b>Programme</b></label><br>
- 	<select id = "programme" >
+ 	<select name = "programme" >
  		<option value="Computer Science" >Computer Science</option>
  		<option value="Mathematics with Economics">Mathematics with Economics</option>
  		<option value="Actuarial Science">Actuarial Science</option>

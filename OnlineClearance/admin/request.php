@@ -1,13 +1,15 @@
 <?php include "head.php";
-if (isset($_GET['Accept'])) {
+	  
+if (isset($_GET['Accept'])) 
+{
 $Accept=$_GET["Accept"];
 $sql="UPDATE department SET status='Accepted' where id= '$Accept'";
 
 if ($connect ->query($sql)===TRUE) {
-	echo "Accepted Successfully";
+	echo "Accepted Successfully";}
 }
 
-}
+		
 if (isset($_GET["Reject"])) {
 	$Reject=$_GET["Reject"];
 	$sql="UPDATE department SET status='Rejected'where id='$Reject'";
@@ -18,6 +20,8 @@ if (isset($_GET["Reject"])) {
 }
  ?>
 
+
+
 <div class="container " style="margin-top: 30px;">
 	<div class="row">
 		<div class="col-sm-12">
@@ -26,14 +30,14 @@ if (isset($_GET["Reject"])) {
 					<th><label for student_id><br>Student ID</label></th>
 					
 					<th><label for department><br>Department</label>
-					<select id department>
-						<option value="CampusAccountant" >Campus Accountant</option>
-				 		<option value="CampusLibrarian">Campus Librarian</optio>
-				 		<option value="ComputerLaboratory">Computer Laboratory</option>
-				 		<option value="Laboratory">Laboratory</option>
-				 		<option value="SeniorHallTutor">Senior Hall Tutor</option>
-				 		<option value="CampusSportsCoach">Campus Sports Coach</option>
-				  		<option value="DeaninCharge">Dean in Charge</option>
+					<select name="department" >
+						<option id="0"  >Campus Accountant</option>
+				 		<option id="1">Campus Librarian</optio>
+				 		<option id="2" >Computer Laboratory</option>
+				 		<option id="3" >Laboratory</option>
+				 		<option id="4" >Senior Hall Tutor</option>
+				 		<option id="5" >Campus Sports Coach</option>
+				  		<option id="6" >Dean in Charge</option>
 						</select></th>
 					<th><label for options><br>Options
                       	<?php
@@ -56,4 +60,13 @@ if (isset($_GET["Reject"])) {
 		</div>
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
 <?php include "foot.php"  ?>
