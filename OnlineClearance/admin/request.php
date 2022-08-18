@@ -3,7 +3,11 @@
 if (isset($_GET['Accept'])) 
 {
 $Accept=$_GET["Accept"];
-$sql="UPDATE department SET status='Accepted' where id= '$Accept'";
+$studentid = $_GET['studentID'];
+$department = $_GET['department'];
+$status = $_GET['status'];
+$message = $_GET['message'];
+$sql="INSERT INTO clearacne(studentid,department,status) values("",'$studentid','$department',$message)  where id= '$Accept'";
 
 if ($connect ->query($sql)===TRUE) {
 	echo "Accepted Successfully";}
