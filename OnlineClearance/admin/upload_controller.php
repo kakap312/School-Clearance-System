@@ -37,7 +37,7 @@ $sql= "INSERT INTO voucher (student_id,voucher) VALUES ('$student_id','$cDateTim
 if ($connect->query($sql)===TRUE) {
 	echo "voucher Successfully uploaded";
 }else{
-	echo "Error: ".$sql. "<br>".$connect->error;
+	echo "Error: ".$sql. "".$connect->error;
 }
 
  ?*/>

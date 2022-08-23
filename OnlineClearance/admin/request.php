@@ -2,15 +2,17 @@
 	  
 if (isset($_POST['status'])) 
 {
-$studentid = $_POST['studentid'];
+$student_id = $_POST['studentid'];
 $department = $_POST['department'];
 $status = $_POST['status'];
 $message = $_POST['message'];
 }
-$sql="INSERT INTO clearance SET studentid='$studentid', department='$department',status='$status',message='$message' where id= '$studentid'";
+$sql="INSERT INTO clearance(student_id,department,status,message) values('$student_id','$department','$status','$message')";
 if ($connect ->query($sql)===TRUE) {
-	echo '<script>alert("successfully Created")</script>'}
+	echo '<script>alert("successfully Created")</script>';
 }
+
+
 
 ?>
 <div class='container' style="margin-top: 30px;">
